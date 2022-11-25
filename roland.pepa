@@ -1,0 +1,16 @@
+r_attack = 0.01;
+r_hit = 0.8;
+r_miss = 0.2;
+r_reload = 0.3;
+r_emiss = 0.3;
+
+Roland_idle = (attack, T).Roland_2;
+Roland_2 = (hit, r_hit).Roland_kills + (miss, r_miss).Roland_1;
+Roland_1 = (hit, r_hit).Roland_kills + (miss, r_miss).Roland_empty;
+Roland_kills = (reload, r_reload).Roland_idle;
+Roland_empty = (reload, r_reload).Roland_2;
+
+Enemies_idle = (attack, r_attack).Enemies_attack;
+Enemies_attack = (fire, r_emiss).Enemies_attack + (hit, T).Enemies_idle;
+
+Roland_idle <hit,attack> Enemies_idle
