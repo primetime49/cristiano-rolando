@@ -33,27 +33,19 @@ Arrive_off = (on, gamma).Arrive_on;
 Server_0 = (service, alpha*mu_1).Server_0 + (service, (1-alpha)*mu_1).Server_1;
 Server_1 = (service, alpha*mu_2).Server_0 + (service, (1-alpha)*mu_2).Server_1;
 
-Poweroff_1 = (poweroff, poweroff_rate).Poweroff_10;
-Poweroff_10 = (tick, poweroff_rate).Poweroff_9;
-Poweroff_9 = (tick, poweroff_rate).Poweroff_8;
-Poweroff_8 = (tick, poweroff_rate).Poweroff_7;
-Poweroff_7 = (tick, poweroff_rate).Poweroff_6;
+Poweroff_1 = (poweroff, poweroff_rate).Poweroff_6;
 Poweroff_6 = (tick, poweroff_rate).Poweroff_5;
 Poweroff_5 = (tick, poweroff_rate).Poweroff_4;
 Poweroff_4 = (tick, poweroff_rate).Poweroff_3;
 Poweroff_3 = (tick, poweroff_rate).Poweroff_2;
 Poweroff_2 = (tick, poweroff_rate).Poweroff_1;
 
-Powerup_1 = (powerup, poweron_rate).Powerup_10;
-Powerup_10 = (tock, poweron_rate).Powerup_9;
-Powerup_9 = (tock, poweron_rate).Powerup_8;
-Powerup_8 = (tock, poweron_rate).Powerup_7;
-Powerup_7 = (tock, poweron_rate).Powerup_6;
+Powerup_1 = (powerup, poweron_rate).Powerup_6;
 Powerup_6 = (tock, poweron_rate).Powerup_5;
 Powerup_5 = (tock, poweron_rate).Powerup_4;
 Powerup_4 = (tock, poweron_rate).Powerup_3;
 Powerup_3 = (tock, poweron_rate).Powerup_2;
 Powerup_2 = (tock, poweron_rate).Powerup_1;
 
-(Arrive_on <arrival> Sleep_0 <service> Server_0) <poweroff,powerup, tick, tock> (Poweroff_10 || Powerup_10)
+(Arrive_on <arrival> Sleep_0 <service> Server_0) <poweroff,powerup, tick, tock> (Poweroff_6 || Powerup_6)
 
